@@ -3,16 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "clear": "rm -rf ./dist",
+    "build": "tsc",
+    "dev": "NODE_ENV=dev nodemon --exec node ./dist/index.js -e ts --exec \"npm run compile\"",
+    "compile": "npm run clear && npm run build && node ./dist/index.js",
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^4.21.1",
     "node-postgres": "^0.6.2"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.0",
+    "@types/pg": "^8.11.10",
     "nodemon": "^3.1.7",
     "typescript": "^5.6.3"
   }
