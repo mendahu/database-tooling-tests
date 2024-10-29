@@ -1,3 +1,4 @@
+/* @name getBookById */
 SELECT
   books.id,
   books.title,
@@ -12,4 +13,4 @@ FROM
   books
 JOIN authors ON authors.id = books.author_id
 WHERE
-  books.id = $1;
+  books.id = :id!;

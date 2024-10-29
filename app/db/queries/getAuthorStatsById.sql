@@ -1,7 +1,9 @@
+/* @name getAuthorStatsById */
 SELECT
   name,
   COUNT(books.id) as book_count,
-  'author' as type,
+  'author' as "type!",
+  (SELECT COUNT(authors.id) > 0 FROM authors) as published,
   CASE
     WHEN COUNT(books.id) = 0 THEN 'No books'
     WHEN COUNT(books.id) = 1 THEN '1 book'
@@ -11,6 +13,6 @@ FROM
   authors
   LEFT JOIN books ON authors.id = books.author_id
 WHERE
-  authors.id = $1
+  authors.id = :id
 GROUP BY
   authors.id;

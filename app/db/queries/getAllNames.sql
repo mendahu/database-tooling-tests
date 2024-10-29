@@ -1,3 +1,4 @@
+/* @name getAllNames */
 SELECT
   name
 FROM authors
