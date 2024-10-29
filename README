@@ -1,0 +1,7 @@
+# Testing Database Tooling for Node JS
+
+This repo is code to explore different tools related to interacting with Postgres/Relational DBs from Node.JS and TypeScript. My tests here are being documented in blog posts beginning [here](https://jakerobins.com/blog/exploring-the-problem-database-tooling-in-node-js)
+
+The `main` branch has the default test repo. Each tool I check will have a feature branch to see how it works. Currently there is:
+
+- `test/pgtyped`: Exploring the PgTyped package
