@@ -1,4 +1,4 @@
-import { Client } from "node-postgres";
+import { Client } from "pg";
 import express from "express";
 
 export const router = (client: Client) => {
