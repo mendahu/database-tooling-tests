@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "reset.js",
   "scripts": {
-    "db:reset": "node ./scripts/reset.js"
+    "db:reset": "node ./scripts/reset.js",
+    "db:seed": "node ./scripts/mass_seed.js"
   },
   "keywords": [],
   "author": "",
