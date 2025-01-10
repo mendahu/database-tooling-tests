@@ -15,7 +15,7 @@ export const router = (client: Client) => {
     const { rows } = await client.query("SELECT * FROM users");
     res.send(rows);
 
-    const result = await db.select().from(authors);
+    const result = await db.select({ id: authors.id }).from(authors);
 
     const rawResult = await db.execute(sql`SELECT
       ${books.id},
@@ -28,7 +28,7 @@ export const router = (client: Client) => {
       ) as author,
       COALESCE(${books.url}, ${books.url}) as url
     FROM
-    ${books}
+     ${books}
     JOIN ${authors} ON ${authors.id} = ${books.authorId}
     WHERE
     ${books.id} = ${req.params.id};`);
